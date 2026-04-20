@@ -1,2 +1,7 @@
 # Orbital-simulations
-Contains the orbital simulations used in the individual project "Hands on Lab Operations for Autonomous Navigation in Space'
+
+Attatched are the Orbital Simulation files used for creating and validating the orbital mechanics for the project "Hands on Lab Operations for Autonomous Navigation in Space" Satelite A is the chaser spacecraft and Satellite B is the Target. The simulation will be used to drive laborotory hardware in order to capture Imagery datasets for training relative navigation algorithms To test the orbital energy decay change the number of orbits (N) to a value >1. In the paper I used 10 as an example If the simulation is running slow, delete the 3d model or change the "if mod(i,5)==0, drawnow;" line at line 220 to "if mod(i,NUMBER)==0, drawnow;" where NUMBER is the number of timesteps to skip on updating the model. The Model works between a range of 400km and 800km as of right now. The drag coefficient is approximated as 2.2 but may need updating to more accurately capture the realistic results. Data on exact values for the satellites was scarce so some approximations have been made as mentioned in the paper. J2 is the only gravitational perturbation added so far (J3 and higher terms not yet implemented)
+
+The code was designed and ran on MATLAB_R2025b and can be ran as one script.
+
+Expected outputs: Graphs illustrating the torque histories of the different disturbance torques modelled broken down into x,y,z components 3D figure showing the orbits animated, with orbital paths, markers and pointing arrows Graphs showing the pointing velocities of the satellites Torque summary printed to console Graph showing distance between the two satellites over time JSON export
